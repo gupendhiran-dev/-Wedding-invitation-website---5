@@ -1,0 +1,37 @@
+/* Envelope Animation */
+.envelope-container { display: flex; flex-direction: column; align-items: center; gap: 3rem; }
+.envelope {
+    position: relative; width: 400px; height: 250px;
+    background: var(--dusty-rose); margin: 0 auto;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    perspective: 1000px;
+}
+.envelope-front {
+    position: absolute; width: 0; height: 0; z-index: 3;
+    border-left: 200px solid transparent; border-right: 200px solid transparent; border-bottom: 125px solid #c79a83;
+    bottom: 0;
+}
+.envelope-flap {
+    position: absolute; width: 0; height: 0; z-index: 4;
+    border-left: 200px solid transparent; border-right: 200px solid transparent; border-top: 130px solid var(--dusty-rose);
+    top: 0; transform-origin: top; transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.letter {
+    position: absolute; background: var(--ivory); width: 90%; height: 90%;
+    left: 5%; bottom: 5%; z-index: 2; padding: 2rem; text-align: center;
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+    border: 1px solid var(--champagne);
+}
+/* Active state toggled by JS */
+.envelope.is-open .envelope-flap { transform: rotateX(180deg); z-index: 1; }
+.envelope.is-open .letter { transform: translateY(-120px); z-index: 5; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+/* Scroll Indicator */
+.scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 10; text-align: center; color: var(--text-dark); }
+.mouse { width: 30px; height: 50px; border: 2px solid var(--text-dark); border-radius: 15px; margin: 10px auto; position: relative; }
+.wheel { width: 4px; height: 8px; background: var(--text-dark); border-radius: 2px; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); animation: scroll 1.5s infinite; }
+
+@keyframes scroll {
+    0% { transform: translate(-50%, 0); opacity: 1; }
+    100% { transform: translate(-50%, 15px); opacity: 0; }
+}
