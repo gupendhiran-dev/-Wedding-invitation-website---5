@@ -1,0 +1,80 @@
+:root {
+    /* Luxury Color Palette */
+    --cream: #F9F6F0;
+    --champagne: #D4AF37;
+    --soft-pink: #FADADD;
+    --dusty-rose: #DCAE96;
+    --sage-green: #8F9779;
+    --ivory: #FFFFF0;
+    --text-dark: #2C2C2C;
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-script: 'Great Vibes', cursive;
+    --font-body: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cream);
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+h1, h2, h3 { font-family: var(--font-heading); }
+.couple-names { font-family: var(--font-script); color: var(--champagne); }
+
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999; /* Adjust based on preference. High z-index to float over everything */
+    pointer-events: none;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--sage-green);
+    margin-bottom: 3rem;
+}
+
+.btn-primary {
+    background: var(--champagne);
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 50px;
+}
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+.music-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    background: var(--cream);
+    border: 2px solid var(--champagne);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
