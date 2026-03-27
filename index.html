@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narmatha & Gupendhiran | A Magical Journey</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <button id="music-toggle" class="music-btn">
+        <span class="icon">🎵</span>
+    </button>
+    <audio id="bg-music" loop>
+        <source src="assets/romantic-bg.mp3" type="audio/mpeg">
+    </audio>
+
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+            
+            <section class="hero-section" id="hero">
+                <div class="parallax-layer layer-1 sky"></div>
+                <div class="parallax-layer layer-2 mountains"></div>
+                <div class="parallax-layer layer-3 clouds"></div>
+                <div class="parallax-layer layer-4 foliage-back"></div>
+                
+                <div class="hero-content">
+                    <h2 class="pre-title">The Wedding Of</h2>
+                    <h1 class="couple-names">Narmatha & Gupendhiran</h1>
+                    <p class="wedding-date">October 24, 2026</p>
+                </div>
+
+                <div class="parallax-layer layer-5 foliage-front"></div>
+                <div class="scroll-indicator">
+                    <span>Scroll to explore</span>
+                    <div class="mouse"><div class="wheel"></div></div>
+                </div>
+            </section>
+
+            <section class="envelope-section" id="invite">
+                <div class="envelope-container">
+                    <div class="envelope" id="envelope-wrapper">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-body">
+                            <div class="letter">
+                                <h3>You are Invited</h3>
+                                <p>To witness the beginning of our new chapter.</p>
+                                <p>With joyous hearts, we invite you to share in our love.</p>
+                            </div>
+                        </div>
+                        <div class="envelope-front"></div>
+                    </div>
+                    <button id="open-invite-btn" class="btn-primary">Open Invitation</button>
+                </div>
+            </section>
+
+            <section class="couple-section" id="couple">
+                <div class="container">
+                    <div class="couple-wrapper">
+                        <div class="person bride">
+                            <div class="photo-frame">
+                                <img src="https://images.unsplash.com/photo-1543854589-9b986b24d1e2?auto=format&fit=crop&q=80&w=600" alt="Bride">
+                            </div>
+                            <h3>Narmatha Vance</h3>
+                            <p>A beautiful soul with a heart full of dreams.</p>
+                        </div>
+                        <div class="and-symbol">&</div>
+                        <div class="person groom">
+                            <div class="photo-frame">
+                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=600" alt="Groom">
+                            </div>
+                            <h3>Gupendhiran Sterling</h3>
+                            <p>The anchor of love and the spirit of adventure.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="story-section" id="story">
+                <h2 class="section-title">Our Story</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>First Meeting</h3>
+                            <p>A chance encounter in a cozy bookstore café.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>The First Date</h3>
+                            <p>Walking under the city lights, talking until dawn.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>The Proposal</h3>
+                            <p>A magical evening under a canopy of stars.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="countdown-section" id="countdown">
+                <h2 class="section-title">Save the Date</h2>
+                <div class="timer" id="timer">
+                    <div class="time-box"><span id="days">00</span><p>Days</p></div>
+                    <div class="time-box"><span id="hours">00</span><p>Hours</p></div>
+                    <div class="time-box"><span id="minutes">00</span><p>Minutes</p></div>
+                    <div class="time-box"><span id="seconds">00</span><p>Seconds</p></div>
+                </div>
+            </section>
+
+            <section class="events-section" id="events">
+                <h2 class="section-title">Events</h2>
+                <div class="events-grid">
+                    <div class="event-card">
+                        <h3>Mehendi</h3>
+                        <p class="date">Oct 23, 2026 | 4:00 PM</p>
+                        <p class="location">The Royal Gardens</p>
+                    </div>
+                    <div class="event-card">
+                        <h3>Wedding Ceremony</h3>
+                        <p class="date">Oct 24, 2026 | 10:00 AM</p>
+                        <p class="location">Heritage Palace Grand Hall</p>
+                    </div>
+                    <div class="event-card">
+                        <h3>Reception</h3>
+                        <p class="date">Oct 24, 2026 | 7:00 PM</p>
+                        <p class="location">Starlight Ballroom</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="rsvp-section" id="rsvp">
+                <div class="rsvp-container">
+                    <h2 class="section-title">RSVP</h2>
+                    <form id="rsvp-form">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <select required>
+                            <option value="">Number of Guests</option>
+                            <option value="1">Just Me</option>
+                            <option value="2">Two People</option>
+                            <option value="3">Three People</option>
+                        </select>
+                        <button type="submit" class="btn-primary">Confirm Attendance</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="closing-section">
+                <h2 class="couple-names">Thank You</h2>
+                <p>We can't wait to celebrate with you.</p>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <script src="scripts/main.js"></script>
+    <script src="scripts/parallax.js"></script>
+    <script src="scripts/animations.js"></script>
+    <script src="scripts/particles.js"></script>
+</body>
+</html>
